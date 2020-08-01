@@ -12,9 +12,7 @@ tic
 Description:
 Analysis on the motion paths of sunflower pattern is carried out with the
 optimization method. (Constraints are regarded as the objective function)
-Moreover, the folding radius of the pattern is discussed. And the
-optimization will be performed on the geometric pattern in the future to
-obtain the higher storage ratio.
+
 
 Definition:
 Angle between Plane123 and Plane012 is Alpha (Given)
