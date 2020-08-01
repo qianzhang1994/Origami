@@ -31,21 +31,22 @@ Angle: Rotation array angle pi/3
 Constraint equation: 
 the distance between Points 4 and 5 is constant
 %}
-D12=2;D13=3;D24=3;
+D12=2.5;D13=2.5;D24=2.5;
 fi213=120/180*pi;fi423=60/180*pi;
 Angle=pi/3;
+InitBeta=[0/180*pi];
 for i=1:180
 Alpha=-i/180*pi;
-InitBeta=[0/180*pi];
-lb=[0];ub=[pi];%outer
-% lb=[-pi];ub=[0];%inter
+% lb=[0];ub=[pi];%outer
+lb=[-pi];ub=[0];%inter
 options = optimset;
-options = optimset(options,'TolFun', 10e-6);
-options = optimset(options,'TolX', 10e-6);
+options = optimset(options,'TolFun', 10e-8);
+options = optimset(options,'TolX', 10e-8);
 %% Modify options setting
 options = optimset(options,'Display', 'off');
 fun_Beta=@(Beta)obj_sunflower(D12,D13,D24,fi213,fi423,Angle,Alpha,Beta);
 [x,fval,exitflag]=fmincon(fun_Beta,InitBeta,[],[],[],[],lb,ub,[],options);
+InitBeta=[x];% In order to calculate quickly and smoothly
 Beta=x;
 %% initial position 
 P2=[0 0 0]';P1=[-D12,0,0]';P0=[-D12*cos(Angle),-D12*sin(Angle) 0]';
