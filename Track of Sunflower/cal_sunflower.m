@@ -31,7 +31,7 @@ Angle: Rotation array angle pi/3
 Constraint equation: 
 the distance between Points 4 and 5 is constant
 %}
-D12=2.5;D13=2.5;D24=2.5;
+D12=3;D13=3;D24=3;
 fi213=120/180*pi;fi423=60/180*pi;
 Angle=pi/3;
 InitBeta=[0/180*pi];
